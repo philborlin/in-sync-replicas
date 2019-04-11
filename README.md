@@ -1,7 +1,7 @@
 # in-sync-replicas
 An in sync replica implementation in go meant to be embedded in distributed systems
 
-# what is it?
+# What is it?
 In Sync Replicas (ISR) are a way of replicating partitions of data across multiple nodes in an efficient manner.
 They are useful for systems that have some natural partioning properties (like a message broker with multiple
 topics/streams) where it is desirable to set a replication factor that is less than the total nodes in the cluster.
@@ -20,12 +20,12 @@ replication list. This allows us to stay performant in the face of stuck, laggin
 Kafka created this pattern and this implementation is entirely indebted to the hard work of a multitude
 of Kafka committers.
 
-# problem
+# Problem
 There are several systems written in Go that are re-inventing the wheel
 * Jocko - Kafka implemented in Golang with built-in coordination (No ZK dep, single binary install, Cloud Native)
 * Liftbridge - Lightweight, fault-tolerant message streams
 * committed - A distributed commit log for creating CQRS systems
 
 This embedded server is designed to create a distributed systems primitive that can be shared by systems
-interested in using In Sync Replicas. The hope is that this will be as useful as Hashicorps wonderful RAFT
-library which is a stellar example what distributed systems primitive should look like.
+interested in using In Sync Replicas. The hope is that this will be as useful as Hashicorp's wonderful RAFT
+library which is a stellar example of what a distributed systems primitive should look like.
